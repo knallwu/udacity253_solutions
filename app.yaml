@@ -1,0 +1,19 @@
+application: ethknown 
+version: 3
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: jinja2
+  version: latest
+
+handlers:
+- url: /.*
+  script: ethknown.app
+  
+- url: /rot13
+  script: rot13.app
+  
+- url: /birthday
+  script: birthday.app

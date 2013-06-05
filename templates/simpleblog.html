@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/static/simpleblog.css" />
+    
+    <title>My simple blog</title>
+    <a href="/simpleblog"><h1>Just another blog.</h1></a>
+  </head>
+ 
+  <body>
+    <a href="/simpleblog/newpost">Add new entry</a><br><br>
+    {% for content in posts%}
+      <div class="content">
+        <div class="content-subject">{{content.subject}}</div>
+        <pre class="content-body">{{content.content}}</pre>
+        <div class="post-date">{{content.created.strftime("%b %d, %Y")}}</div>
+        <hr>
+      </div>
+    {% endfor %}
+  </body>
+
+</html>
